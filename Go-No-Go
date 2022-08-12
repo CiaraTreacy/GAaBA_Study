@@ -44,6 +44,7 @@ task nogo
 # -------------------------------------
 
 block training
+  message instructions
   message instructions_training
   tasklist
     go 20
