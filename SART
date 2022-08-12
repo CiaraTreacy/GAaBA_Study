@@ -1,9 +1,3 @@
-options
-  fullscreen
-  scale 
-  resolution 1000 800
-  frame 1000 800
-  
 bitmaps
   mask
   titlescreen
