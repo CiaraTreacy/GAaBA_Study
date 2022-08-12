@@ -1,3 +1,9 @@
+options 
+  fullscreen
+  scale 
+  resolution 1000 800
+  frame 1000 800
+  
 bitmaps
   instruction1
   instruction2
@@ -64,14 +70,28 @@ task stroop
   delay 500
   clear 3 # remove feedback stimulus
   save BLOCKNAME @1 TABLEROW KEY STATUS RT
- 
-message instruction1
-
-message instruction2
 
 block training 
+  message instruction_training_1
+  message instruction_training_2
   tasklist
-    stroop 40  # run the stroop task 40 trials.
+    stroop 16  # run the stroop task 16 trials.
+  end
+  feedback
+    text -100 0  "Your speed in correct trials"
+    set &StroopCon mean c8 ; select c4 == 1 && c7 == 1
+    set &StroopInc mean c8 ; select c4 == 0 && c7 == 1
+    set &StroopEffect expression &StroopInc - &StroopCon
+    text -100 50  &StroopCon ; prefix "congruent:   " ; postfix " ms"
+    text -100 100 &StroopInc ; prefix "incongruent: " ; postfix " ms"
+    text -100 150 &StroopEffect ; prefix "Your Stroop effect is incongruent minus congruent: " ; postfix " ms"
+    text -100 200 "Press space key to end"
+  end
+  
+block realtest
+  message instructions_real
+  tasklist
+    stroop 120  # run the stroop task 120 trials.
   end
   feedback
     text -100 0  "Your speed in correct trials"
