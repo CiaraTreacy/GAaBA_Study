@@ -64,6 +64,7 @@ task flanker
  save @1 @2 STATUS RT
 
 block training
+  message intro
   message instructions_training
   tasklist
     flanker 30
