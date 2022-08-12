@@ -1,3 +1,9 @@
+options
+  fullscreen
+  scale 
+  resolution 1000 800
+  frame 1000 800
+
 bitmaps
   instructions
   gosignal
@@ -37,10 +43,16 @@ task nogo
 
 # -------------------------------------
 
-message instructions
-
-block
+block training
+  message instructions_training
   tasklist
     go 20
     nogo 5
+  end
+  
+block realtest
+  message instructions_real
+  tasklist
+    go 144
+    nogo 36
   end
