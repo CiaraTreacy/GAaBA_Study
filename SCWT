@@ -72,8 +72,9 @@ task stroop
   save BLOCKNAME @1 TABLEROW KEY STATUS RT
 
 block training 
-  message instruction_training_1
-  message instruction_training_2
+  message instruction1
+  message instruction2
+  message instructions_training
   tasklist
     stroop 16  # run the stroop task 16 trials.
   end
