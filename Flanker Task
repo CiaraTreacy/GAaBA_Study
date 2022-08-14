@@ -1,0 +1,78 @@
+options
+  bitmapdir stimuli
+
+bitmaps
+  fix
+  fixgreen
+  fixred
+  intro
+
+fonts
+  Small arial 18
+  Large arial 40
+
+table flankers
+ "XXXXX" 1 1
+ "XXCXX" 1 1
+ "XXVXX" 0 2
+ "XXBXX" 0 2
+ "CCXCC" 1 1
+ "CCCCC" 1 1
+ "CCVCC" 0 2
+ "CCBCC" 0 2
+ "VVXVV" 0 1
+ "VVCVV" 0 1
+ "VVVVV" 1 2
+ "VVBVV" 1 2
+ "BBXBB" 0 1
+ "BBCBB" 0 1
+ "BBVBB" 1 2
+ "BBBBB" 1 2
+
+task flanker
+  table flankers
+  keys a l
+  font Large
+  show bitmap fix 0 25
+  show text @1 0 -25 255 255 255
+  readkey @3 2000
+  if STATUS == CORRECT
+    clear 1 2
+    show bitmap fixgreen 0 25
+    delay 150
+    clear 3
+    delay 150
+    show bitmap fixgreen 0 25
+    delay 150
+    clear 4
+ fi
+ if STATUS != CORRECT
+    clear 1 2
+    show bitmap fixred 0 25
+    delay 300
+    clear 3
+    delay 300
+    show bitmap fixred 0 25
+    delay 300
+    clear 4
+ fi
+ delay 500
+ save @1 @2 STATUS RT
+ 
+ block test
+  message intro
+  tasklist
+    flanker 50
+  end
+  feedback
+    text align left
+    text color yellow    
+    set &RTCon mean c4 ; select c2 == 1 && c3 == 1 
+    set &RTInc mean c4 ; select c2 == 0 && c3 == 1
+    set &FlankerEffect expression &RTInc - &RTCon
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RTCon ; prefix "Compatible: "     ; postfix " ms"
+    text -200   50 &RTInc ; prefix "Incompatible: "   ; postfix " ms"
+    text -200  125 &FlankerEffect ; prefix "Flanker effect: " ; postfix " ms"
+    text -200  200 "Press space bar to continue"
+  end
