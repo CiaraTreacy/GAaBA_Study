@@ -5,8 +5,9 @@ options
   frame 1000 800
 
 bitmaps
-  instruction1
-  instruction2
+  instructions
+  instructions_training
+  instructions_realtest
   correct
   mistake
   fixpoint
