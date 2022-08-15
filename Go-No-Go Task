@@ -6,6 +6,8 @@ options
 
 bitmaps
   instructions
+  instructions_training
+  instructions_realtest
   gosignal
   nogosignal
   errortype1
@@ -44,6 +46,7 @@ task nogo
 # -------------------------------------
 
 block training
+  message instructions
   message instructions_training
   tasklist
     go 20
