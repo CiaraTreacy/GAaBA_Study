@@ -9,7 +9,9 @@ bitmaps
   fix
   fixgreen
   fixred
-  intro
+  intructions
+  instructions_training
+  instructions_realtest
 
 fonts
   Small arial 18
@@ -64,6 +66,7 @@ task flanker
  save @1 @2 STATUS RT
  
  block training
+  message instructions
   message intructions_training
   tasklist
     flanker 30
@@ -82,7 +85,7 @@ task flanker
   end
  
  block realtest
-  message intructions_training
+  message intructions_realtest
   tasklist
     flanker 150
   end
