@@ -1,5 +1,9 @@
 options
   bitmapdir stimuli
+  fullscreen
+  scale 
+  resolution 100 800
+  frame 1000 800
 
 bitmaps
   fix
@@ -59,10 +63,28 @@ task flanker
  delay 500
  save @1 @2 STATUS RT
  
- block test
-  message intro
+ block training
+  message intructions_training
   tasklist
-    flanker 50
+    flanker 30
+  end
+  feedback
+    text align left
+    text color yellow    
+    set &RTCon mean c4 ; select c2 == 1 && c3 == 1 
+    set &RTInc mean c4 ; select c2 == 0 && c3 == 1
+    set &FlankerEffect expression &RTInc - &RTCon
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RTCon ; prefix "Compatible: "     ; postfix " ms"
+    text -200   50 &RTInc ; prefix "Incompatible: "   ; postfix " ms"
+    text -200  125 &FlankerEffect ; prefix "Flanker effect: " ; postfix " ms"
+    text -200  200 "Press space bar to continue"
+  end
+ 
+ block realtest
+  message intructions_training
+  tasklist
+    flanker 150
   end
   feedback
     text align left
