@@ -54,7 +54,7 @@ block training
   end
 
 block realtest
-  message instruction_real
+  message instruction_realtest
   tasklist
     go 144
     nogo 36
