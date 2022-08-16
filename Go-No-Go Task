@@ -8,15 +8,15 @@ bitmaps
   instructions
   instructions_training
   instructions_realtest
-  gosignal
-  nogosignal
+  go_signal
+  no-go_signal
   errortype1
   errortype2
 
 task go
   keys space
   set $errorstatus 0
-  show bitmap gosignal
+  show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   if STATUS == TIMEOUT
@@ -31,7 +31,7 @@ task go
 task nogo
   keys space
   set $errorstatus 0
-  show bitmap nogosignal
+  show bitmap no-go_signal
   readkey 1 2000
   clear 1
   if STATUS != TIMEOUT  ## there should be a TIME OUT, so if not, we have a mistake
