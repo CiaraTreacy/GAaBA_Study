@@ -9,7 +9,7 @@ bitmaps
   instructions_training
   instructions_realtest
   go_signal
-  no-go_signal
+  nogo_signal
   errortype1
   errortype2
 
@@ -31,7 +31,7 @@ task go
 task nogo
   keys space
   set $errorstatus 0
-  show bitmap no-go_signal
+  show bitmap nogo_signal
   readkey 1 2000
   clear 1
   if STATUS != TIMEOUT  ## there should be a TIME OUT, so if not, we have a mistake
@@ -54,7 +54,7 @@ block training
   end
 
 block realtest
-  message instruction_realtest
+  message instructions_realtest
   tasklist
     go 144
     nogo 36
