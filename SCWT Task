@@ -90,7 +90,7 @@ block training
   end
 
 block realtest
-  message instructions_real
+  message instructions_realtest
   tasklist
     stroop 120  # run the stroop task 120 trials.
   end
