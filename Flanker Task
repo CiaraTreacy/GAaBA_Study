@@ -9,7 +9,7 @@ bitmaps
   fix
   fixgreen
   fixred
-  intructions
+  instructions
   instructions_training
   instructions_realtest
 
@@ -85,7 +85,7 @@ task flanker
   end
  
  block realtest
-  message intructions_realtest
+  message instructions_realtest
   tasklist
     flanker 150
   end
