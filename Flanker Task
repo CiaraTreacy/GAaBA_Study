@@ -17,7 +17,7 @@ fonts
   Small arial 18
   Large arial 40
 
-table flankers
+table flanker
  "XXXXX" 1 1
  "XXCXX" 1 1
  "XXVXX" 0 2
@@ -36,7 +36,7 @@ table flankers
  "BBBBB" 1 2
 
 task flanker
-  table flankers
+  table flanker
   keys a l
   font Large
   show bitmap fix 0 25
