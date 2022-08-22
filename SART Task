@@ -9,7 +9,7 @@ bitmaps
   titlescreen
   instruction1
   instruction2
-  instruction_real
+  instruction3
   mistake_wrong_press
   mistake_missed
   welldone_training
@@ -110,7 +110,7 @@ block training
   message welldone_training
 
 block realtest
-  message instruction_real
+  message instruction3
   set &&digitrange range 1 9 
   set &&mydigits &&digitrange times 25
   set &&mydigits shuffle no_repeat
