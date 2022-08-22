@@ -41,7 +41,7 @@ task nogo
     clear 2
   fi
   delay 500 # intertrial interval
-  save TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT $errorstatus
 
 # -------------------------------------
 
