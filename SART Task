@@ -12,8 +12,6 @@ bitmaps
   instruction3
   mistake_wrong_press
   mistake_missed
-  welldone_training
-  welldone_experiment
   ready1
   ready2
   ready3
@@ -107,7 +105,6 @@ block training
     text -200 100  &NoGoMistakesP  ; prefix "No Go mistakes:" ; postfix "%"
     text -200 150  "Press space bar to continue"
   end
-  message welldone_training
 
 block realtest
   message instruction3
@@ -140,4 +137,3 @@ block realtest
     text -200 100  &NoGoMistakesP  ; prefix "No Go mistakes:" ; postfix "%"
     text -200 150  "Press space bar to continue"
   end
-  message welldone_experiment
