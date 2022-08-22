@@ -5,9 +5,9 @@ options
   frame 1000 800
 
 bitmaps
-  instructions
-  instructions_training
-  instructions_realtest
+  instructions1
+  instructions2
+  instructions3
   correct
   mistake
   fixpoint
@@ -73,8 +73,8 @@ task stroop
   save BLOCKNAME @1 TABLEROW KEY STATUS RT
   
 block training 
-  message instructions
-  message instructions_training
+  message instructions1
+  message instructions2
   tasklist
     stroop 16  # run the stroop task 16 trials.
   end
@@ -90,7 +90,7 @@ block training
   end
 
 block realtest
-  message instructions_realtest
+  message instructions3
   tasklist
     stroop 120  # run the stroop task 120 trials.
   end
