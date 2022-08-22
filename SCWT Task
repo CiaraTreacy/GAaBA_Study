@@ -35,21 +35,29 @@ fonts
 
 table stroop
   "yellow yellow 1" yellowyellow 4
+  "yellow yellow 1" yellowyellow 4
   "yellow green  0" yellowgreen  2
   "yellow blue   0" yellowblue   3
   "yellow red    0" yellowred    1
+  "yellow yellow 1" yellowyellow 4
+  "red red       1" redred       1
+  "red red       1" redred       1
   "red yellow    0" redyellow    4
   "red green     0" redgreen     2
   "red blue      0" redblue      3
   "red red       1" redred       1
-  "green yellow  0" greenyellow  4
   "green green   1" greengreen   2
+  "green green   1" greengreen   2
+  "green yellow  0" greenyellow  4
   "green blue    0" greenblue    3
   "green red     0" greenred     1
+  "green green   1" greengreen   2
+  "blue blue     1" blueblue     3
+  "blue blue     1" blueblue     3
   "blue yellow   0" blueyellow   4
   "blue green    0" bluegreen    2
-  "blue blue     1" blueblue     3
   "blue red      0" bluered      1
+  "blue blue     1" blueblue     3
 
 task stroop
   table stroop
