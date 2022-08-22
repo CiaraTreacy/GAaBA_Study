@@ -2,16 +2,16 @@ options
   bitmapdir stimuli
   fullscreen
   scale 
-  resolution 100 800
+  resolution 1000 800
   frame 1000 800
 
 bitmaps
   fix
   fixgreen
   fixred
-  instructions
-  instructions_training
-  instructions_realtest
+  instructions1
+  instructions2
+  instructions3
 
 fonts
   Small arial 18
@@ -66,8 +66,8 @@ task flanker
  save @1 @2 STATUS RT
  
  block training
-  message instructions
-  message intructions_training
+  message instructions1
+  message intructions2
   tasklist
     flanker 30
   end
@@ -85,7 +85,7 @@ task flanker
   end
  
  block realtest
-  message instructions_realtest
+  message instructions3
   tasklist
     flanker 150
   end
