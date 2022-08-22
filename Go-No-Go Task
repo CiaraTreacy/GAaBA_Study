@@ -28,7 +28,7 @@ task 1 #go
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
-task 2 #nogo
+task 0 #nogo
   keys space
   set $errorstatus 0
   show bitmap nogo_signal
@@ -50,12 +50,61 @@ block training
   message instructions2
   tasklist
     1 20
-    2 5
+    0 5
+  end
+  feedback
+    set &totalGo       count    ; select c2 == 1 
+    set &GoMistakes    count    ; select c2 == 1 && c4 == 1
+    set &GoMistakesP   perc 16  ; select c2 == 1 && c4 == 1
+    set &totalNoGo     count    ; select c2 == 0 
+    set &NoGoMistakes  count    ; select c2 == 0 && c4 == 1
+    set &NoGoMistakesP perc 2   ; select c2 == 1 && c4 == 1
+    text align left
+    text -200 -200 "Results in training block:"    
+    text -200 -150 &totalGo        ; prefix "Number Go trials:" 
+    text -200 -100 &GoMistakes     ; prefix "Number Go mistakes:"
+    text -200 -50  &GoMistakesP    ; prefix "Go mistakes:" ; postfix "%"
+    text -200   0  &totalNoGo      ; prefix "Number No Go trials:" 
+    text -200  50  &NoGoMistakes   ; prefix "Number No Go mistakes:"
+    text -200 100  &NoGoMistakesP  ; prefix "No Go mistakes:" ; postfix "%"
+    text -200 150  "Press space bar to continue"
   end
 
 block realtest
   message instructions3
   tasklist
     1 180
-    2 45
+    0 45
+  end
+  feedback
+    set &totalGo       count    ; select c2 == 1 
+    set &GoMistakes    count    ; select c2 == 1 && c4 == 1
+    set &GoMistakesP   perc 16  ; select c2 == 1 && c4 == 1
+    set &totalNoGo     count    ; select c2 == 0 
+    set &NoGoMistakes  count    ; select c2 == 0 && c4 == 1
+    set &NoGoMistakesP perc 2   ; select c2 == 1 && c4 == 1
+    text align left
+    text -200 -200 "Results in training block:"    
+    text -200 -150 &totalGo        ; prefix "Number Go trials:" 
+    text -200 -100 &GoMistakes     ; prefix "Number Go mistakes:"
+    text -200 -50  &GoMistakesP    ; prefix "Go mistakes:" ; postfix "%"
+    text -200   0  &totalNoGo      ; prefix "Number No Go trials:" 
+    text -200  50  &NoGoMistakes   ; prefix "Number No Go mistakes:"
+    text -200 100  &NoGoMistakesP  ; prefix "No Go mistakes:" ; postfix "%"
+    text -200 150  "Press space bar to continue"
+  end   set &totalGo       count    ; select c2 == 1 && c3 == 1
+    set &GoMistakes    count    ; select c2 == 1 && c3 == 1 && c6 == 0
+    set &GoMistakesP   perc 16  ; select c2 == 1 && c3 == 1 && c6 == 0
+    set &totalNoGo     count    ; select c2 == 1 && c3 == 0
+    set &NoGoMistakes  count    ; select c2 == 1 && c3 == 0 && c6 == 0
+    set &NoGoMistakesP perc 2   ; select c2 == 1 && c3 == 0 && c6 == 0
+    text align left
+    text -200 -200 "Results in training block:"    
+    text -200 -150 &totalGo        ; prefix "Number Go trials:" 
+    text -200 -100 &GoMistakes     ; prefix "Number Go mistakes:"
+    text -200 -50  &GoMistakesP    ; prefix "Go mistakes:" ; postfix "%"
+    text -200   0  &totalNoGo      ; prefix "Number No Go trials:" 
+    text -200  50  &NoGoMistakes   ; prefix "Number No Go mistakes:"
+    text -200 100  &NoGoMistakesP  ; prefix "No Go mistakes:" ; postfix "%"
+    text -200 150  "Press space bar to continue"
   end
