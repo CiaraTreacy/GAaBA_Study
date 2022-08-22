@@ -67,7 +67,7 @@ task flanker
  
  block training
   message instructions1
-  message intructions2
+  message instructions2
   tasklist
     flanker 30
   end
