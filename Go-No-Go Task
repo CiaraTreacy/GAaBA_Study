@@ -55,10 +55,10 @@ block training
   feedback
     set &totalGo       count    ; select c2 == 1 
     set &GoMistakes    count    ; select c2 == 1 && c4 == 1
-    set &GoMistakesP   perc 16  ; select c2 == 1 && c4 == 1
+    set &GoMistakesP   perc 20  ; select c2 == 1 && c4 == 1
     set &totalNoGo     count    ; select c2 == 0 
     set &NoGoMistakes  count    ; select c2 == 0 && c4 == 1
-    set &NoGoMistakesP perc 2   ; select c2 == 1 && c4 == 1
+    set &NoGoMistakesP perc 5   ; select c2 == 1 && c4 == 1
     text align left
     text -200 -200 "Results in training block:"    
     text -200 -150 &totalGo        ; prefix "Number Go trials:" 
@@ -79,10 +79,10 @@ block realtest
   feedback
     set &totalGo       count    ; select c2 == 1 
     set &GoMistakes    count    ; select c2 == 1 && c4 == 1
-    set &GoMistakesP   perc 16  ; select c2 == 1 && c4 == 1
+    set &GoMistakesP   perc 180  ; select c2 == 1 && c4 == 1
     set &totalNoGo     count    ; select c2 == 0 
     set &NoGoMistakes  count    ; select c2 == 0 && c4 == 1
-    set &NoGoMistakesP perc 2   ; select c2 == 1 && c4 == 1
+    set &NoGoMistakesP perc 45   ; select c2 == 1 && c4 == 1
     text align left
     text -200 -200 "Results in training block:"    
     text -200 -150 &totalGo        ; prefix "Number Go trials:" 
