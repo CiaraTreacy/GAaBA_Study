@@ -63,7 +63,7 @@ task flanker
     clear 4
  fi
  delay 500
- save @1 @2 STATUS RT
+ save BLOCKNAME @1 @2 STATUS RT
  
  block training
   message instructions1
