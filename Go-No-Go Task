@@ -13,7 +13,7 @@ bitmaps
   mistake_wrong_press
   mistake_missed
 
-task go
+task 1 #go
   keys space
   set $errorstatus 0
   show bitmap go_signal
@@ -26,12 +26,9 @@ task go
     clear 2
   fi
   delay 500 # intertrial interval
-  fi
-  set $trial_type 1
-  fi
-  save BLOCKNAME TASKNAME $trial_type RT $errorstatus
+  save BLOCKNAME TASKNAME RT $errorstatus
 
-task nogo
+task 2 #nogo
   keys space
   set $errorstatus 0
   show bitmap nogo_signal
@@ -44,10 +41,7 @@ task nogo
     clear 2
   fi
   delay 500 # intertrial interval
-  fi
-  set $trial_type 0
-  fi
-  save BLOCKNAME TASKNAME $trial_type RT $errorstatus
+  save BLOCKNAME TASKNAME RT $errorstatus
 
 # -------------------------------------
 
@@ -55,13 +49,13 @@ block training
   message instructions1
   message instructions2
   tasklist
-    go 20
-    nogo 5
+    1 20
+    2 5
   end
 
 block realtest
   message instructions3
   tasklist
-    go 180
-    nogo 45
+    1 180
+    2 45
   end
