@@ -5,9 +5,9 @@ options
   frame 1000 800
 
 bitmaps
-  instructions
-  instructions_training
-  instructions_realtest
+  instructions1
+  instructions2
+  instructions3
   go_signal
   nogo_signal
   errortype1
@@ -46,16 +46,16 @@ task nogo
 # -------------------------------------
 
 block training
-  message instructions
-  message instructions_training
+  message instructions1
+  message instructions2
   tasklist
     go 20
     nogo 5
   end
 
 block realtest
-  message instructions_realtest
+  message instructions3
   tasklist
-    go 144
-    nogo 36
+    go 180
+    nogo 45
   end
