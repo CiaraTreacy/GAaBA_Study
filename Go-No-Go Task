@@ -27,7 +27,6 @@ task go
   fi
   delay 500 # intertrial interval
   fi
-  ## determine trial type (1=go,0=no-go)
   set $trial_type 1
   fi
   save BLOCKNAME TASKNAME $trial_type RT $errorstatus
@@ -46,7 +45,6 @@ task nogo
   fi
   delay 500 # intertrial interval
   fi
-  ## determine trial type (1=go,0=no-go)
   set $trial_type 0
   fi
   save BLOCKNAME TASKNAME $trial_type RT $errorstatus
