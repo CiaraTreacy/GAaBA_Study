@@ -10,8 +10,8 @@ bitmaps
   instructions3
   go_signal
   nogo_signal
-  errortype1
-  errortype2
+  mistake_wrong_press
+  mistake_missed
 
 task go
   keys space
@@ -21,7 +21,7 @@ task go
   clear 1
   if STATUS == TIMEOUT
     set $errorstatus 1
-    show bitmap errortype2
+    show bitmap mistake_missed
     delay 2000
     clear 2
   fi
@@ -36,7 +36,7 @@ task nogo
   clear 1
   if STATUS != TIMEOUT  ## there should be a TIME OUT, so if not, we have a mistake
     set $errorstatus 1
-    show bitmap errortype1
+    show bitmap mistake_wrong_press
     delay 2000
     clear 2
   fi
