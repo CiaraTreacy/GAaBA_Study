@@ -74,8 +74,8 @@ task flanker
   feedback
     text align left
     text color yellow    
-    set &RTCon mean c4 ; select c2 == 1 && c3 == 1 
-    set &RTInc mean c4 ; select c2 == 0 && c3 == 1
+    set &RTCon mean c5 ; select c3 == 1 && c4 == 1 
+    set &RTInc mean c5 ; select c3 == 0 && c4 == 1
     set &FlankerEffect expression &RTInc - &RTCon
     text -200 -100 "Average RT in conditions:"
     text -200  -25 &RTCon ; prefix "Compatible: "     ; postfix " ms"
@@ -92,8 +92,8 @@ task flanker
   feedback
     text align left
     text color yellow    
-    set &RTCon mean c4 ; select c2 == 1 && c3 == 1 
-    set &RTInc mean c4 ; select c2 == 0 && c3 == 1
+    set &RTCon mean c5 ; select c3 == 1 && c4 == 1 
+    set &RTInc mean c5 ; select c3 == 0 && c4 == 1
     set &FlankerEffect expression &RTInc - &RTCon
     text -200 -100 "Average RT in conditions:"
     text -200  -25 &RTCon ; prefix "Compatible: "     ; postfix " ms"
