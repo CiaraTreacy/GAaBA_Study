@@ -26,7 +26,7 @@ task 1 #go
     clear 2
   fi
   delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME BLOCKNUMBER TASKNAME RT $errorstatus
 
 task 0 #nogo
   keys space
@@ -41,7 +41,7 @@ task 0 #nogo
     clear 2
   fi
   delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME BLOCKNUMBER TASKNAME RT $errorstatus
 
 # -------------------------------------
 
@@ -79,10 +79,10 @@ block realtest
   feedback
     set &totalGo       count    ; select c2 == 1 
     set &GoMistakes    count    ; select c2 == 1 && c4 == 1
-    set &GoMistakesP   perc 180  ; select c2 == 1 && c4 == 1
+    set &GoMistakesP   perc 180 ; select c2 == 1 && c4 == 1
     set &totalNoGo     count    ; select c2 == 0 
     set &NoGoMistakes  count    ; select c2 == 0 && c4 == 1
-    set &NoGoMistakesP perc 45   ; select c2 == 1 && c4 == 1
+    set &NoGoMistakesP perc 45  ; select c2 == 1 && c4 == 1
     text align left
     text -200 -200 "Results in training block:"    
     text -200 -150 &totalGo        ; prefix "Number Go trials:" 
