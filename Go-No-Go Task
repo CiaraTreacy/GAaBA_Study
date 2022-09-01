@@ -5,6 +5,7 @@ options
   frame 1000 800
 
 bitmaps
+  mask
   instructions1
   instructions2
   instructions3
@@ -18,7 +19,7 @@ task 1 #go
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
-  clear 1
+  show bitmap mask
   if STATUS == TIMEOUT
     set $errorstatus 1
     show bitmap mistake_missed
