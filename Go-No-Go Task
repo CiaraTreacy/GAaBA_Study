@@ -19,6 +19,7 @@ task 1 #go
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
   show bitmap mask
   if STATUS == TIMEOUT
     set $errorstatus 1
@@ -35,6 +36,7 @@ task 0 #nogo
   show bitmap nogo_signal
   readkey 1 2000
   clear 1
+  show bitmap mask
   if STATUS != TIMEOUT  ## there should be a TIME OUT, so if not, we have a mistake
     set $errorstatus 1
     show bitmap mistake_wrong_press
