@@ -53,8 +53,6 @@ task 1 #go
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   show bitmap mask
-  clear 2
-  fi
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
@@ -65,8 +63,6 @@ task 0 #nogo
   readkey 1 2000
   clear 1
   show bitmap mask
-  clear 2
-  fi
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
