@@ -62,7 +62,7 @@ table stroop
   "blue red      0" bluered      1
   "blue blue     1" blueblue     3
 
-task stroop
+task strooptraining
   table stroop
   keys h j k l ## red-h (1); green-j (2); blue-k (3); yellow-l (4)
   delay 500
@@ -82,6 +82,19 @@ task stroop
   delay 500
   clear 3 # remove feedback stimulus
   save BLOCKNAME @1 TABLEROW KEY STATUS RT
+ 
+ task strooprealtest
+  table stroop
+  keys h j k l ## red-h (1); green-j (2); blue-k (3); yellow-l (4)
+  delay 500
+  show bitmap fixpoint # stimulus 1
+  delay 200
+  clear 1 # remove fixpoint 
+  delay 100
+  show bitmap @2 # stimulus 2
+  readkey @3 2000
+  clear 2 # remove stimulus 2
+  save BLOCKNAME @1 TABLEROW KEY STATUS RT
   
 block training 
   message instructions1
@@ -93,7 +106,7 @@ block training
   bitmap ready1
   delay 1000
   tasklist
-    stroop 16  # run the stroop task 16 trials.
+    strooptraining 16  # run the stroop task 16 trials.
   end
   feedback
     text -100 0  "Your speed in correct trials"
@@ -115,7 +128,7 @@ block realtest
   bitmap ready1
   delay 1000
   tasklist
-    stroop 120  # run the stroop task 120 trials.
+    strooprealtest 120  # run the stroop task 120 trials.
   end
   feedback
     text -100 0  "Your speed in correct trials"
