@@ -24,7 +24,7 @@ fonts
   font4 arial 100
   font5 arial 120
 
-task sart
+task sarttraining
   keys space
   set $current_digit &&mydigits remove first
   set $random_font random 2 6
@@ -67,6 +67,28 @@ task sart
     set $trial_type 0
   fi
   save BLOCKNAME BLOCKNUMBER $trial_type $current_digit $digit_size $mystatus RT
+  
+task sartrealtest
+  keys space
+  set $current_digit &&mydigits remove first
+  set $random_font random 2 6
+  set $digit_size expression $random_font - 1 ## for report in save line
+  font $random_font
+  show text $current_digit
+  readkey 1 250
+  show bitmap mask
+  if STATUS == TIMEOUT
+    readkey 1 900
+    set $my_rt expression RT + 250
+  if $mystatus == 1
+    delay $remaining_time ## only wait if there was no mistake
+  fi
+  ## determine trial type (1=go,0=no-go)
+  set $trial_type 1
+  if $current_digit == 3
+    set $trial_type 0
+  fi
+  save BLOCKNAME BLOCKNUMBER $trial_type $current_digit $digit_size $mystatus RT
 
 block training
   message titlescreen
@@ -86,7 +108,7 @@ block training
   clear screen
   delay 1000
   tasklist
-     sart 18
+     sarttraining 18
   end
   feedback
     set &totalGo       count    ; select c2 == 1 && c3 == 1
@@ -118,7 +140,7 @@ block realtest
   bitmap ready1
   delay 1000  
   tasklist
-     sart 225
+     sartrealtest 225
   end
   feedback
     set &totalGo       count    ; select c2 == 2 && c3 == 1
