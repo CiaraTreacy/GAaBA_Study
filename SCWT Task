@@ -26,7 +26,10 @@ bitmaps
   blueyellow   
   bluegreen    
   blueblue     
-  bluered      
+  bluered
+  ready1
+  ready2
+  ready3
 
 fonts
   arial 20
@@ -83,6 +86,12 @@ task stroop
 block training 
   message instructions1
   message instructions2
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     stroop 16  # run the stroop task 16 trials.
   end
@@ -99,6 +108,12 @@ block training
 
 block realtest
   message instructions3
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     stroop 120  # run the stroop task 120 trials.
   end
