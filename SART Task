@@ -77,9 +77,23 @@ task sartrealtest
   show text $current_digit
   readkey 1 250
   show bitmap mask
+  if STATUS != TIMEOUT
+    set $my_rt RT
+  fi
   if STATUS == TIMEOUT
     readkey 1 900
     set $my_rt expression RT + 250
+  fi
+  ## the whole intertrial interval is 1150 ms (250 + 900)
+  set $remaining_time expression 1150 - RT
+  ## determine status of response and show feedback if necessary
+  set $mystatus 1 ## assume people respond correctly
+  if $current_digit == 3 && STATUS != TIMEOUT
+    $mystatus = 0 ## pressed when there was a 3
+  fi
+  if $current_digit != 3 && STATUS == TIMEOUT
+    $mystatus = 0 ## not pressed when there was no 3
+  fi
   if $mystatus == 1
     delay $remaining_time ## only wait if there was no mistake
   fi
@@ -89,7 +103,7 @@ task sartrealtest
     set $trial_type 0
   fi
   save BLOCKNAME BLOCKNUMBER $trial_type $current_digit $digit_size $mystatus RT
-
+  
 block training
   message titlescreen
   message instruction1
