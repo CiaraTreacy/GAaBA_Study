@@ -109,14 +109,12 @@ block training
     strooptraining 16  # run the stroop task 16 trials.
   end
   feedback
-    text -100 0  "Your speed in correct trials"
-    set &StroopCon mean c8 ; select c4 == 1 && c7 == 1
-    set &StroopInc mean c8 ; select c4 == 0 && c7 == 1
-    set &StroopEffect expression &StroopInc - &StroopCon
-    text -100 50  &StroopCon ; prefix "congruent:   " ; postfix " ms"
-    text -100 100 &StroopInc ; prefix "incongruent: " ; postfix " ms"
-    text -100 150 &StroopEffect ; prefix "Your Stroop effect is incongruent minus congruent: " ; postfix " ms"
-    text -100 200 "Press space key to end"
+    text align left
+    text color yellow    
+    set &RT mean c8 
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
   end
 
 block realtest
@@ -131,12 +129,10 @@ block realtest
     strooprealtest 120  # run the stroop task 120 trials.
   end
   feedback
-    text -100 0  "Your speed in correct trials"
-    set &StroopCon mean c8 ; select c4 == 1 && c7 == 1
-    set &StroopInc mean c8 ; select c4 == 0 && c7 == 1
-    set &StroopEffect expression &StroopInc - &StroopCon
-    text -100 50  &StroopCon ; prefix "congruent:   " ; postfix " ms"
-    text -100 100 &StroopInc ; prefix "incongruent: " ; postfix " ms"
-    text -100 150 &StroopEffect ; prefix "Your Stroop effect is incongruent minus congruent: " ; postfix " ms"
-    text -100 200 "Press space key to end"
+    text align left
+    text color yellow    
+    set &RT mean c8 
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
   end
