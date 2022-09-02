@@ -14,7 +14,7 @@ bitmaps
   mistake_wrong_press
   mistake_missed
 
-task 1 #go
+task 11 #go
   keys space
   set $errorstatus 0
   show bitmap go_signal
@@ -30,7 +30,7 @@ task 1 #go
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
-task 0 #nogo
+task 00 #nogo
   keys space
   set $errorstatus 0
   show bitmap nogo_signal
@@ -46,14 +46,36 @@ task 0 #nogo
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
+task 1 #go
+  keys space
+  set $errorstatus 0
+  show bitmap go_signal
+  readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
+  show bitmap mask
+  fi
+  delay 500 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
+
+task 0 #nogo
+  keys space
+  set $errorstatus 0
+  show bitmap nogo_signal
+  readkey 1 2000
+  clear 1
+  show bitmap mask
+  fi
+  delay 500 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
+
 # -------------------------------------
 
 block training
   message instructions1
   message instructions2
   tasklist
-    1 20
-    0 5
+    11 20
+    00 5
   end
   feedback
     set &totalGo       count    ; select c2 == 1 
