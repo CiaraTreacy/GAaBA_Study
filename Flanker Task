@@ -12,6 +12,9 @@ bitmaps
   instructions1
   instructions2
   instructions3
+  ready1
+  ready2
+  ready3
 
 fonts
   Small arial 18
@@ -68,6 +71,12 @@ task flanker
  block training
   message instructions1
   message instructions2
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     flanker 30
   end
@@ -86,6 +95,12 @@ task flanker
  
  block realtest
   message instructions3
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     flanker 150
   end
