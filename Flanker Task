@@ -83,7 +83,7 @@ task flanker
   feedback
     text align left
     text color yellow    
-    set &RT mean c5 
+    set &RT mean c6 
     text -200 -100 "Average RT in conditions:"
     text -200  -25 &RT ; postfix " ms"
     text -200  100 "Press space bar to continue"
@@ -103,7 +103,7 @@ task flanker
   feedback
     text align left
     text color yellow    
-    set &RT mean c5 
+    set &RT mean c6 
     text -200 -100 "Average RT in conditions:"
     text -200  -25 &RT ; postfix " ms"
     text -200  100 "Press space bar to continue"
