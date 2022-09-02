@@ -54,7 +54,6 @@ task 1 #go
   clear 1
   show bitmap mask
   clear 2
-  fi
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
@@ -66,7 +65,6 @@ task 0 #nogo
   clear 1
   show bitmap mask
   clear 2
-  fi
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
