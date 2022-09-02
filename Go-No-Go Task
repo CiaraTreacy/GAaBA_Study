@@ -85,21 +85,12 @@ block training
     00 5
   end
   feedback
-    set &totalGo       count    ; select c2 == 1 
-    set &GoMistakes    count    ; select c2 == 1 && c4 == 1
-    set &GoMistakesP   perc 20  ; select c2 == 1 && c4 == 1
-    set &totalNoGo     count    ; select c2 == 0 
-    set &NoGoMistakes  count    ; select c2 == 0 && c4 == 1
-    set &NoGoMistakesP perc 5   ; select c2 == 0 && c4 == 1
     text align left
-    text -200 -200 "Results in training block:"    
-    text -200 -150 &totalGo        ; prefix "Number Go trials:" 
-    text -200 -100 &GoMistakes     ; prefix "Number Go mistakes:"
-    text -200 -50  &GoMistakesP    ; prefix "Go mistakes:" ; postfix "%"
-    text -200   0  &totalNoGo      ; prefix "Number No Go trials:" 
-    text -200  50  &NoGoMistakes   ; prefix "Number No Go mistakes:"
-    text -200 100  &NoGoMistakesP  ; prefix "No Go mistakes:" ; postfix "%"
-    text -200 150  "Press space bar to continue"
+    text color yellow    
+    set &RT mean c3 
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
   end
 
 block realtest
@@ -115,19 +106,10 @@ block realtest
     0 45
   end
   feedback
-    set &totalGo       count    ; select c2 == 1 
-    set &GoMistakes    count    ; select c2 == 1 && c4 == 1
-    set &GoMistakesP   perc 180 ; select c2 == 1 && c4 == 1
-    set &totalNoGo     count    ; select c2 == 0 
-    set &NoGoMistakes  count    ; select c2 == 0 && c4 == 1
-    set &NoGoMistakesP perc 45  ; select c2 == 0 && c4 == 1
     text align left
-    text -200 -200 "Results in training block:"    
-    text -200 -150 &totalGo        ; prefix "Number Go trials:" 
-    text -200 -100 &GoMistakes     ; prefix "Number Go mistakes:"
-    text -200 -50  &GoMistakesP    ; prefix "Go mistakes:" ; postfix "%"
-    text -200   0  &totalNoGo      ; prefix "Number No Go trials:" 
-    text -200  50  &NoGoMistakes   ; prefix "Number No Go mistakes:"
-    text -200 100  &NoGoMistakesP  ; prefix "No Go mistakes:" ; postfix "%"
-    text -200 150  "Press space bar to continue"
-  end  
+    text color yellow    
+    set &RT mean c3
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
+  end
