@@ -53,11 +53,7 @@ task 1 #go
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   show bitmap mask
-  if STATUS == TIMEOUT
-    set $errorstatus 1
-    show bitmap mistake_missed
-    delay 2000
-    clear 2
+  clear 2
   fi
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
@@ -69,11 +65,7 @@ task 0 #nogo
   readkey 1 2000
   clear 1
   show bitmap mask
-  if STATUS != TIMEOUT  ## there should be a TIME OUT, so if not, we have a mistake
-    set $errorstatus 1
-    show bitmap mistake_wrong_press
-    delay 2000
-    clear 2
+  clear 2
   fi
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
