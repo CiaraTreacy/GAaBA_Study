@@ -64,7 +64,7 @@ table stroop
 
 task stroop
   table stroop
-  keys r g b y
+  keys h j k l ## red-h (1); green-j (2); blue-k (3); yellow-l (4)
   delay 500
   show bitmap fixpoint # stimulus 1
   delay 200
