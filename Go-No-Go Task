@@ -13,6 +13,9 @@ bitmaps
   nogo_signal
   mistake_wrong_press
   mistake_missed
+  ready1
+  ready2
+  ready3
 
 task 11 #go
   keys space
@@ -71,6 +74,12 @@ task 0 #nogo
 block training
   message instructions1
   message instructions2
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     11 20
     00 5
@@ -95,6 +104,12 @@ block training
 
 block realtest
   message instructions3
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     1 180
     0 45
