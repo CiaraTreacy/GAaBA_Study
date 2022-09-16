@@ -39,25 +39,10 @@ bitmaps
 part myfeedback
   feedback
     text align left
-    set &Total1 count ; select c3 == 1 && c1 == BLOCKNUMBER ## number of trials where there was a 2back item
-    set &Total2 count ; select c3 == 0 && c1 == BLOCKNUMBER ## number of trials where there was NOT a 3back item
-    set &Matches count     ; select c5 == 1 && c1 == BLOCKNUMBER ## number of matches
-    set &Misses count      ; select c6 == 1 && c1 == BLOCKNUMBER ## number of misses
-    set &FalseAlarms count ; select c7 == 1 && c1 == BLOCKNUMBER ## number of false alarms
-    set &MatchesPerc      expression &Matches     / &Total1 * 100.0
-    set &MissesPerc       expression &Misses      / &Total1 * 100.0
-    set &FalseAlarmsPerc  expression &FalseAlarms / &Total2 * 100.0
-    text -250 -200 "There were 25 trials in total in this block"
-    text -250 -150 &Total1 ; prefix "Total trials that had a match:"
-    text -250 -100 &Total2 ; prefix "Total trials that had no match:"
-    text -250 -50  &Matches ; prefix "Number of correctly matched items:"
-    text -250 -0   &Misses ; prefix "Number of missed items:"
-    text -250  50  &FalseAlarms ; prefix "Number of false alarms:"
-    text -250 100  &MatchesPerc ; prefix "Percentage correct matches:" ; postfix " %"
-    text -250 150  &MissesPerc  ; prefix "Percentage missed items:" ; postfix " %"
-    text -250 200  &FalseAlarmsPerc ; prefix "Percentage false alarms:" ; postfix " %"
-    text -250 250 "Press button Q to continue"
-    wait_for_key q
+    set &RT mean c8
+    text -200 -100 "Average Reaction Time:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue
   end
 
 ## the "part" below is a piece of code used several times in the code.
@@ -154,14 +139,6 @@ block nback_real1
   set &trialcount 0 # make sure you use this again if you have another block
   message realblock1
   tasklist
-    twoback 25
-  end
-  part myfeedback
-
-block nback_real2
-  set &trialcount 0 # make sure you use this again if you have another block
-  message realblock2
-  tasklist
-    twoback 25
+    twoback 100
   end
   part myfeedback
