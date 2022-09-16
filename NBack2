@@ -33,7 +33,7 @@ bitmaps
   grey_feedback
   instruction1
   instruction2
-  realblock1
+  realblock1 #change to instructions3
   realblock2
   ready1
   ready2
@@ -142,7 +142,7 @@ block training
     text -200  100 "Press space bar to continue"
   end
 
-block nback_real1
+block realtest
   set &trialcount 0 # make sure you use this again if you have another block
   message realblock1
   bitmap ready3
