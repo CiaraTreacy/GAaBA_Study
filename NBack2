@@ -133,7 +133,7 @@ block training
   feedback
     text align left
     text color yellow    
-    set &RT mean c68
+    set &RT mean c8
     text -200 -100 "Average RT in conditions:"
     text -200  -25 &RT ; postfix " ms"
     text -200  100 "Press space bar to continue"
@@ -154,7 +154,7 @@ block nback_real1
   feedback
     text align left
     text color yellow    
-    set &RT mean c68
+    set &RT mean c8
     text -200 -100 "Average RT in conditions:"
     text -200  -25 &RT ; postfix " ms"
     text -200  100 "Press space bar to continue"
