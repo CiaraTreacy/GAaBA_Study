@@ -35,6 +35,9 @@ bitmaps
   instruction2
   realblock1
   realblock2
+  ready1
+  ready2
+  ready3
 
 ## the "part" below is a piece of code used several times in the code.
 ## this is just a placeholder which is used in the last later on.
