@@ -1,4 +1,8 @@
 options
+  fullscreen
+  scale 
+  resolution 1000 800
+  frame 1000 800
   bitmapdir stimuli
   set &stimulus_display_time 500 # stimulus presentation
   set &iti 2500  # intertrial interval
