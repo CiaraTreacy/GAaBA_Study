@@ -35,15 +35,6 @@ bitmaps
   instruction2
   realblock1
   realblock2
-  
-part myfeedback
-  feedback
-    text align left
-    set &RT mean c8
-    text -200 -100 "Average Reaction Time:"
-    text -200  -25 &RT ; postfix " ms"
-    text -200  100 "Press space bar to continue
-  end
 
 ## the "part" below is a piece of code used several times in the code.
 ## this is just a placeholder which is used in the last later on.
@@ -130,15 +121,41 @@ block training
   set &trialcount 0 # make sure you use this again if you have another block
   message instruction1
   message instruction2
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     twoback 25
   end
-  part myfeedback
+  feedback
+    text align left
+    text color yellow    
+    set &RT mean c68
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
+  end
 
 block nback_real1
   set &trialcount 0 # make sure you use this again if you have another block
   message realblock1
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
   tasklist
     twoback 100
   end
-  part myfeedback
+  feedback
+    text align left
+    text color yellow    
+    set &RT mean c68
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
+  end
