@@ -57,6 +57,69 @@ part check_response
     set $match 1
     show bitmap correct_feedback  ## green rectangle below and over letter
   fi
+  
+task oneback
+  keys m
+  set &trialcount increase
+  set $currentletter random 1 15 ## choose random letter out of the 15 options
+  ############################################################################
+  ## is this condition a yes condition?
+  set $memory random 1 &choosechance ## random number for choosing condition
+  ## if a 2back trial
+  if $memory == 1 and &trialcount > 1
+    set $currentletter &nback1
+    set $requiredresponse 1 ## the m key needs to be pressed later, m=stands for Memory
+    set $typeoftrial 1
+  fi
+  ## if a NON n-back trial
+  if $memory != 1 or &trialcount <= 1 ## chose a letter but not that of 2 trials ago
+    set $currentletter random 1 15
+    while $currentletter == &nback1 ## choose anything but NOT that of 2 back
+      set $currentletter random 1 15
+    while-end
+    set $requiredresponse 0 ## no key should be pressed
+    set $typeoftrial 0
+  fi
+  ############################################################################
+  draw off
+    show bitmap $currentletter ## stimulus 1
+    show bitmap grey_feedback  ## stimulus 2
+  draw on
+  readkey 1 &stimulus_display_time
+  set $extrawait expression &stimulus_display_time - RT ## how much time is left between max RT and now?
+  ##############################################################
+  ## determine whether error was made during letter presentation
+  ## people can only make mistake if pressing now when they should not
+  ##############################################################
+  set $score 0 ## this is the default, assume error
+  part check_response
+  set $my_rt RT
+  ###########
+  ## now wait remaining time if needed
+  ###########
+  delay $extrawait ## wait until letter has been on screen total of 760 ms, note this only happens if people already pressed
+  clear 1 ## clear the letter from screen
+  ###########
+  ## now show nothing but allow response during ITI
+  ###########
+  if STATUS == TIMEOUT ## means people did not respond yet
+    readkey 1 &iti
+    set $my_rt expression RT + &stimulus_display_time
+  fi
+  part check_response
+  ## if you pressed, then some time will be left; during that time, no need to further check keys anymore
+  set $extrawait expression &iti - RT ## how much time is left between iti RT and now?
+  ## now check if people missed
+  if $requiredresponse == 1 and $score == 0
+    set $miss 1
+  fi
+  delay $extrawait
+  ### now save the letter for next trial
+  set &nback2 &nback1
+  set &nback1 $currentletter
+  ### save the data
+  save BLOCKNUMBER &trialcount $typeoftrial $score $match $miss $false_alarm $my_rt $memory $currentletter &nback1 &nback2
+
 
 task twoback
   keys m
