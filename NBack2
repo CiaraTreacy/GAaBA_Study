@@ -182,8 +182,51 @@ task twoback
   set &nback1 $currentletter
   ### save the data
   save BLOCKNUMBER &trialcount $typeoftrial $score $match $miss $false_alarm $my_rt $memory $currentletter &nback1 &nback2
+  
+block training1back
+  set &trialcount 0 # make sure you use this again if you have another block
+  message instruction1
+  message instruction2
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
+  tasklist
+    oneback 25
+  end
+  feedback
+    text align left
+    text color yellow    
+    set &RT mean c8
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
+  end
+  
+block realtest1back
+  set &trialcount 0 # make sure you use this again if you have another block
+  message realblock1
+  bitmap ready3
+  delay 1000
+  bitmap ready2
+  delay 1000  
+  bitmap ready1
+  delay 1000
+  tasklist
+    oneback 100
+  end
+  feedback
+    text align left
+    text color yellow    
+    set &RT mean c8
+    text -200 -100 "Average RT in conditions:"
+    text -200  -25 &RT ; postfix " ms"
+    text -200  100 "Press space bar to continue"
+  end
 
-block training
+block training2back
   set &trialcount 0 # make sure you use this again if you have another block
   message instruction1
   message instruction2
@@ -205,7 +248,7 @@ block training
     text -200  100 "Press space bar to continue"
   end
 
-block realtest
+block realtest2back
   set &trialcount 0 # make sure you use this again if you have another block
   message realblock1
   bitmap ready3
