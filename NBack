@@ -65,7 +65,7 @@ task oneback
   ############################################################################
   ## is this condition a yes condition?
   set $memory random 1 &choosechance ## random number for choosing condition
-  ## if a 2back trial
+  ## if a 1back trial
   if $memory == 1 and &trialcount > 1
     set $currentletter &nback1
     set $requiredresponse 1 ## the m key needs to be pressed later, m=stands for Memory
@@ -194,7 +194,7 @@ block training1back
   bitmap ready1
   delay 1000
   tasklist
-    oneback 25
+    oneback 15
   end
   feedback
     text align left
@@ -215,7 +215,7 @@ block realtest1back
   bitmap ready1
   delay 1000
   tasklist
-    oneback 100
+    oneback 60
   end
   feedback
     text align left
@@ -237,7 +237,7 @@ block training2back
   bitmap ready1
   delay 1000
   tasklist
-    twoback 25
+    twoback 15
   end
   feedback
     text align left
@@ -258,7 +258,7 @@ block realtest2back
   bitmap ready1
   delay 1000
   tasklist
-    twoback 100
+    twoback 60
   end
   feedback
     text align left
