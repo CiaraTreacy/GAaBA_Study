@@ -31,10 +31,12 @@ bitmaps
   error_feedback
   correct_feedback
   grey_feedback
-  instruction1
-  instruction2
-  realblock1 #change to instructions3
-  realblock2
+  instructions1
+  instructions2
+  instructions3
+  instructions4
+  instructions5
+  instructions6
   ready1
   ready2
   ready3
@@ -185,8 +187,8 @@ task twoback
   
 block training1back
   set &trialcount 0 # make sure you use this again if you have another block
-  message instruction1
-  message instruction2
+  message instructions1
+  message instructions2
   bitmap ready3
   delay 1000
   bitmap ready2
@@ -207,7 +209,7 @@ block training1back
   
 block realtest1back
   set &trialcount 0 # make sure you use this again if you have another block
-  message realblock1
+  message instructions3
   bitmap ready3
   delay 1000
   bitmap ready2
@@ -228,8 +230,8 @@ block realtest1back
 
 block training2back
   set &trialcount 0 # make sure you use this again if you have another block
-  message instruction1
-  message instruction2
+  message instructions4
+  message instructions5
   bitmap ready3
   delay 1000
   bitmap ready2
@@ -250,7 +252,7 @@ block training2back
 
 block realtest2back
   set &trialcount 0 # make sure you use this again if you have another block
-  message realblock1
+  message instructions6
   bitmap ready3
   delay 1000
   bitmap ready2
