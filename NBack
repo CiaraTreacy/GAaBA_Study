@@ -31,6 +31,7 @@ bitmaps
   error_feedback
   correct_feedback
   grey_feedback
+  welcomepage
   instructions1
   instructions2
   instructions3
@@ -187,6 +188,7 @@ task twoback
   
 block training1back
   set &trialcount 0 # make sure you use this again if you have another block
+  message welcomepage
   message instructions1
   message instructions2
   bitmap ready3
