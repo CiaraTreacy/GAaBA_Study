@@ -16,6 +16,22 @@ bitmaps
   ready2
   ready3
 
+task 1 #go
+  keys space
+  set $errorstatus 0
+  show bitmap go_signal
+  readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
+  show bitmap mask
+  if STATUS == TIMEOUT
+    set $errorstatus 1
+    show bitmap mistake_missed
+    delay 2000
+    clear 2
+  fi
+  delay 600 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
+
 task 11 #go
   keys space
   set $errorstatus 0
@@ -29,19 +45,80 @@ task 11 #go
     delay 2000
     clear 2
   fi
-  delay 500 # intertrial interval
+  delay 900 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
-
-task 1 #go
+  
+task 111 #go
   keys space
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   show bitmap mask
-  delay 500 # intertrial interval
+  if STATUS == TIMEOUT
+    set $errorstatus 1
+    show bitmap mistake_missed
+    delay 1200
+    clear 2
+  fi
+  delay 1200 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
+  
+ task 1111 #go
+  keys space
+  set $errorstatus 0
+  show bitmap go_signal
+  readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
+  show bitmap mask
+  if STATUS == TIMEOUT
+    set $errorstatus 1
+    show bitmap mistake_missed
+    delay 1200
+    clear 2
+  fi
+  delay 1500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
+task 2 #go
+  keys space
+  set $errorstatus 0
+  show bitmap go_signal
+  readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
+  show bitmap mask
+  delay 600 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
+
+task 22 #go
+  keys space
+  set $errorstatus 0
+  show bitmap go_signal
+  readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
+  show bitmap mask
+  delay 900 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
+  
+task 222 #go
+  keys space
+  set $errorstatus 0
+  show bitmap go_signal
+  readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
+  show bitmap mask
+  delay 1200 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
+  
+task 222 #go
+  keys space
+  set $errorstatus 0
+  show bitmap go_signal
+  readkey 1 2000 # wait 2 seconds for key to be pressed
+  clear 1
+  show bitmap mask
+  delay 1500 # intertrial interval
+  save BLOCKNAME TASKNAME RT $errorstatus
 # -------------------------------------
 
 block training
@@ -54,7 +131,10 @@ block training
   bitmap ready1
   delay 1000
   tasklist
-    11 20
+    1 5
+    11 5
+    111 5
+    1111 5
   end
   feedback
     text align left
@@ -74,7 +154,10 @@ block realtest
   bitmap ready1
   delay 1000
   tasklist
-    1 100
+    2 25
+    22 25
+    222 25
+    2222 25
   end
   feedback
     text align left
