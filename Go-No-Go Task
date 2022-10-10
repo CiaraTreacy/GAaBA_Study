@@ -111,5 +111,5 @@ block realtest
     set &RT mean c3
     text -200 -100 "Average RT in conditions:"
     text -200  -25 &RT ; postfix " ms"
-    text -200  100 "Press space bar to continue"
+    text -200  100 "Well done, you have completed the task"
   end
