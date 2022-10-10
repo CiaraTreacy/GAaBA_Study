@@ -30,7 +30,7 @@ task 1 #go
     clear 2
   fi
   delay 600 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 
 task 11 #go
   keys space
@@ -46,7 +46,7 @@ task 11 #go
     clear 2
   fi
   delay 900 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
   
 task 111 #go
   keys space
@@ -62,7 +62,7 @@ task 111 #go
     clear 2
   fi
   delay 1200 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
   
  task 1111 #go
   keys space
@@ -78,7 +78,7 @@ task 111 #go
     clear 2
   fi
   delay 1500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 
 task 2 #go
   keys space
@@ -88,7 +88,7 @@ task 2 #go
   clear 1
   show bitmap mask
   delay 600 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 
 task 22 #go
   keys space
@@ -98,7 +98,7 @@ task 22 #go
   clear 1
   show bitmap mask
   delay 900 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
   
 task 222 #go
   keys space
@@ -108,7 +108,7 @@ task 222 #go
   clear 1
   show bitmap mask
   delay 1200 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
   
 task 2222 #go
   keys space
@@ -118,7 +118,7 @@ task 2222 #go
   clear 1
   show bitmap mask
   delay 1500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 # -------------------------------------
 
 block training
