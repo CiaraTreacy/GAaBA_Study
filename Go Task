@@ -10,7 +10,6 @@ bitmaps
   instructions2
   instructions3
   go_signal
-  nogo_signal
   mistake_wrong_press
   mistake_missed
   ready1
@@ -33,37 +32,11 @@ task 11 #go
   delay 500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
-task 00 #nogo
-  keys space
-  set $errorstatus 0
-  show bitmap nogo_signal
-  readkey 1 2000
-  clear 1
-  show bitmap mask
-  if STATUS != TIMEOUT  ## there should be a TIME OUT, so if not, we have a mistake
-    set $errorstatus 1
-    show bitmap mistake_wrong_press
-    delay 2000
-    clear 2
-  fi
-  delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
-
 task 1 #go
   keys space
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
-  clear 1
-  show bitmap mask
-  delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
-
-task 0 #nogo
-  keys space
-  set $errorstatus 0
-  show bitmap nogo_signal
-  readkey 1 2000
   clear 1
   show bitmap mask
   delay 500 # intertrial interval
@@ -82,7 +55,6 @@ block training
   delay 1000
   tasklist
     11 20
-    00 5
   end
   feedback
     text align left
@@ -102,8 +74,7 @@ block realtest
   bitmap ready1
   delay 1000
   tasklist
-    1 180
-    0 45
+    1 100
   end
   feedback
     text align left
