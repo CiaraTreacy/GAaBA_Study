@@ -110,7 +110,7 @@ task 222 #go
   delay 1200 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
   
-task 222 #go
+task 2222 #go
   keys space
   set $errorstatus 0
   show bitmap go_signal
