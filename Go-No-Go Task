@@ -108,8 +108,8 @@ block realtest
   bitmap ready1
   delay 1000
   tasklist
-    1 20
-    0 5
+    1 180
+    0 45
   end
   feedback
     text align left
