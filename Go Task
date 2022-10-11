@@ -89,6 +89,7 @@ task 2 #go realtest 600ms ISI
   show bitmap mask
   if STATUS == TIMEOUT
     set $errorstatus 1
+  fi
   delay 600 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 
@@ -101,6 +102,7 @@ task 22 #go realtest 900ms ISI
   show bitmap mask
   if STATUS == TIMEOUT
     set $errorstatus 1
+  fi
   delay 900 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
   
@@ -113,6 +115,7 @@ task 222 #go realtest 1200ms ISI
   show bitmap mask
   if STATUS == TIMEOUT
     set $errorstatus 1
+  fi
   delay 1200 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
   
@@ -125,6 +128,7 @@ task 2222 #go realtest 1500ms ISI
   show bitmap mask
   if STATUS == TIMEOUT
     set $errorstatus 1
+  fi
   delay 1500 # intertrial interval
   save BLOCKNAME TASKNAME RT $errorstatus
 # -------------------------------------
