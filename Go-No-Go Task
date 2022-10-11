@@ -31,7 +31,7 @@ task 11 #go
     clear 2
   fi
   delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 
 task 00 #nogo
   keys space
@@ -47,7 +47,7 @@ task 00 #nogo
     clear 2
   fi
   delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 
 task 1 #go
   keys space
@@ -57,7 +57,7 @@ task 1 #go
   clear 1
   show bitmap mask
   delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 
 task 0 #nogo
   keys space
@@ -67,7 +67,7 @@ task 0 #nogo
   clear 1
   show bitmap mask
   delay 500 # intertrial interval
-  save BLOCKNAME TASKNAME RT $errorstatus
+  save BLOCKNAME TASKNAME RT STATUS
 
 # -------------------------------------
 
