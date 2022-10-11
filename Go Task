@@ -16,7 +16,7 @@ bitmaps
   ready2
   ready3
 
-task 1 #go
+task 1 #go practice 600ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
@@ -30,9 +30,9 @@ task 1 #go
     clear 2
   fi
   delay 600 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
 
-task 11 #go
+task 11 #go practice 900ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
@@ -46,9 +46,9 @@ task 11 #go
     clear 2
   fi
   delay 900 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
   
-task 111 #go
+task 111 #go practice 1200ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
@@ -58,13 +58,13 @@ task 111 #go
   if STATUS == TIMEOUT
     set $errorstatus 1
     show bitmap mistake_missed
-    delay 1200
+    delay 2000
     clear 2
   fi
   delay 1200 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
   
- task 1111 #go
+ task 1111 #go practice 1500ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
@@ -74,51 +74,59 @@ task 111 #go
   if STATUS == TIMEOUT
     set $errorstatus 1
     show bitmap mistake_missed
-    delay 1200
+    delay 2000
     clear 2
   fi
   delay 1500 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
 
-task 2 #go
+task 2 #go realtest 600ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   show bitmap mask
+  if STATUS == TIMEOUT
+    set $errorstatus 1
   delay 600 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
 
-task 22 #go
+task 22 #go realtest 900ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   show bitmap mask
+  if STATUS == TIMEOUT
+    set $errorstatus 1
   delay 900 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
   
-task 222 #go
+task 222 #go realtest 1200ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   show bitmap mask
+  if STATUS == TIMEOUT
+    set $errorstatus 1
   delay 1200 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
   
-task 2222 #go
+task 2222 #go realtest 1500ms ISI
   keys space
   set $errorstatus 0
   show bitmap go_signal
   readkey 1 2000 # wait 2 seconds for key to be pressed
   clear 1
   show bitmap mask
+  if STATUS == TIMEOUT
+    set $errorstatus 1
   delay 1500 # intertrial interval
-  save BLOCKNAME TASKNAME RT STATUS
+  save BLOCKNAME TASKNAME RT $errorstatus
 # -------------------------------------
 
 block training
@@ -154,10 +162,10 @@ block realtest
   bitmap ready1
   delay 1000
   tasklist
-    2 25
-    22 25
-    222 25
-    2222 25
+    2 5
+    22 5
+    222 5
+    2222 5
   end
   feedback
     text align left
