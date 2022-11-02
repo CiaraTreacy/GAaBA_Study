@@ -40,7 +40,7 @@ table flanker
 
 task flanker
   table flanker
-  keys a l
+  keys 
   font Large
   show bitmap fix 0 25
   show text @1 0 -25 255 255 255
