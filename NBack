@@ -62,7 +62,7 @@ part check_response
   fi
   
 task oneback
-  keys m
+  keys space
   set &trialcount increase
   set $currentletter random 1 15 ## choose random letter out of the 15 options
   ############################################################################
@@ -71,7 +71,7 @@ task oneback
   ## if a 1back trial
   if $memory == 1 and &trialcount > 1
     set $currentletter &nback1
-    set $requiredresponse 1 ## the m key needs to be pressed later, m=stands for Memory
+    set $requiredresponse 1 ## the space bar needs to be pressed later
     set $typeoftrial 1
   fi
   ## if a NON n-back trial
@@ -125,7 +125,7 @@ task oneback
 
 
 task twoback
-  keys m
+  keys space
   set &trialcount increase
   set $currentletter random 1 15 ## choose random letter out of the 15 options
   ############################################################################
@@ -134,7 +134,7 @@ task twoback
   ## if a 2back trial
   if $memory == 1 and &trialcount > 2
     set $currentletter &nback2
-    set $requiredresponse 1 ## the m key needs to be pressed later, m=stands for Memory
+    set $requiredresponse 1 ## the space bar needs to be pressed later
     set $typeoftrial 1
   fi
   ## if a NON n-back trial
