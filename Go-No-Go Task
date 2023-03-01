@@ -69,7 +69,7 @@ task 0 #nogo
   readkey 1 2000
   clear 1
   show bitmap mask
-  if STATUS == TIMEOUT
+  if STATUS != TIMEOUT  ## there should be a TIME OUT, so if not, we have a mistake
     set $errorstatus 1
   fi
   delay 500 # intertrial interval
